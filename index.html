@@ -1,363 +1,226 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>TaskFlow | Modern Todo App</title>
 
     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
 
-    <link rel="stylesheet"
-          href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-</head>
+  <body>
+    <div class="app">
+      <!-- ========================= -->
+      <!-- Header -->
+      <!-- ========================= -->
 
-<body>
-
-<div class="app">
-
-    <!-- ========================= -->
-    <!-- Header -->
-    <!-- ========================= -->
-
-    <header>
-
+      <header>
         <div class="logo">
+          <i class="fa-solid fa-list-check"></i>
 
-            <i class="fa-solid fa-list-check"></i>
-
-            <h1>TaskFlow</h1>
-
+          <h1>TaskFlow</h1>
         </div>
 
-        <button
-            id="themeToggle"
-            class="theme-btn">
-
-            <i class="fa-solid fa-moon"></i>
-
+        <button id="themeToggle" class="theme-btn">
+          <i class="fa-solid fa-moon"></i>
         </button>
+      </header>
 
-    </header>
+      <!-- ========================= -->
+      <!-- Hero -->
+      <!-- ========================= -->
 
-    <!-- ========================= -->
-    <!-- Hero -->
-    <!-- ========================= -->
+      <section class="hero">
+        <h2>Organize Your Day Efficiently</h2>
 
-    <section class="hero">
+        <p>Stay productive with a modern task manager.</p>
+      </section>
 
-        <h2>
-            Organize Your Day Efficiently
-        </h2>
+      <!-- ========================= -->
+      <!-- Search -->
+      <!-- ========================= -->
 
-        <p>
-
-            Stay productive with a modern task manager.
-
-        </p>
-
-    </section>
-
-    <!-- ========================= -->
-    <!-- Search -->
-    <!-- ========================= -->
-
-    <section class="search-section">
-
+      <section class="search-section">
         <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
 
-            <i class="fa-solid fa-magnifying-glass"></i>
-
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search tasks...">
-
+          <input type="text" id="searchInput" placeholder="Search tasks..." />
         </div>
+      </section>
 
-    </section>
+      <!-- ========================= -->
+      <!-- Add Task -->
+      <!-- ========================= -->
 
-    <!-- ========================= -->
-    <!-- Add Task -->
-    <!-- ========================= -->
-
-    <section class="task-form">
-
-        <input
-            type="text"
-            id="taskInput"
-            placeholder="Enter a task...">
+      <section class="task-form">
+        <input type="text" id="taskInput" placeholder="Enter a task..." />
 
         <select id="category">
+          <option value="Work">Work</option>
 
-            <option value="Work">Work</option>
+          <option value="Study">Study</option>
 
-            <option value="Study">Study</option>
+          <option value="Personal">Personal</option>
 
-            <option value="Personal">Personal</option>
+          <option value="Shopping">Shopping</option>
 
-            <option value="Shopping">Shopping</option>
-
-            <option value="Health">Health</option>
-
+          <option value="Health">Health</option>
         </select>
 
         <select id="priority">
+          <option value="High">High Priority</option>
 
-            <option value="High">High Priority</option>
+          <option value="Medium">Medium Priority</option>
 
-            <option value="Medium">Medium Priority</option>
-
-            <option value="Low">Low Priority</option>
-
+          <option value="Low">Low Priority</option>
         </select>
 
-        <input
-            type="date"
-            id="dueDate">
+        <input type="date" id="dueDate" />
 
         <button id="addTask">
+          <i class="fa-solid fa-plus"></i>
 
-            <i class="fa-solid fa-plus"></i>
-
-            Add Task
-
+          Add Task
         </button>
+      </section>
 
-    </section>
+      <!-- ========================= -->
+      <!-- Filters -->
+      <!-- ========================= -->
 
-    <!-- ========================= -->
-    <!-- Filters -->
-    <!-- ========================= -->
+      <section class="filter-bar">
+        <button class="filter active">All</button>
 
-    <section class="filter-bar">
+        <button class="filter">Active</button>
 
-        <button class="filter active">
+        <button class="filter">Completed</button>
 
-            All
+        <button class="filter">Today</button>
 
-        </button>
+        <button class="filter">Overdue</button>
+      </section>
 
-        <button class="filter">
+      <!-- ========================= -->
+      <!-- Sort -->
+      <!-- ========================= -->
 
-            Active
-
-        </button>
-
-        <button class="filter">
-
-            Completed
-
-        </button>
-
-        <button class="filter">
-
-            Today
-
-        </button>
-
-        <button class="filter">
-
-            Overdue
-
-        </button>
-
-    </section>
-
-    <!-- ========================= -->
-    <!-- Sort -->
-    <!-- ========================= -->
-
-    <section class="sort-section">
-
-        <label>
-
-            Sort By
-
-        </label>
+      <section class="sort-section">
+        <label> Sort By </label>
 
         <select id="sortTasks">
+          <option>Newest</option>
 
-            <option>Newest</option>
+          <option>Oldest</option>
 
-            <option>Oldest</option>
+          <option>Priority</option>
 
-            <option>Priority</option>
+          <option>Due Date</option>
 
-            <option>Due Date</option>
-
-            <option>Alphabetically</option>
-
+          <option>Alphabetically</option>
         </select>
+      </section>
 
-    </section>
+      <!-- ========================= -->
+      <!-- Progress -->
+      <!-- ========================= -->
 
-    <!-- ========================= -->
-    <!-- Progress -->
-    <!-- ========================= -->
-
-    <section class="progress-section">
-
+      <section class="progress-section">
         <div class="progress-text">
+          <span> Progress </span>
 
-            <span>
-
-                Progress
-
-            </span>
-
-            <span id="progressCount">
-
-                0 / 0
-
-            </span>
-
+          <span id="progressCount"> 0 / 0 </span>
         </div>
 
         <div class="progress-bar">
-
-            <div
-                id="progressFill">
-
-            </div>
-
+          <div id="progressFill"></div>
         </div>
+      </section>
 
-    </section>
+      <!-- ========================= -->
+      <!-- Statistics -->
+      <!-- ========================= -->
 
-    <!-- ========================= -->
-    <!-- Statistics -->
-    <!-- ========================= -->
-
-    <section class="stats">
-
+      <section class="stats">
         <div class="card">
+          <h3>Total</h3>
 
-            <h3>Total</h3>
-
-            <p id="totalTasks">
-
-                0
-
-            </p>
-
+          <p id="totalTasks">0</p>
         </div>
 
         <div class="card">
+          <h3>Completed</h3>
 
-            <h3>Completed</h3>
-
-            <p id="completedTasks">
-
-                0
-
-            </p>
-
+          <p id="completedTasks">0</p>
         </div>
 
         <div class="card">
+          <h3>Remaining</h3>
 
-            <h3>Remaining</h3>
-
-            <p id="remainingTasks">
-
-                0
-
-            </p>
-
+          <p id="remainingTasks">0</p>
         </div>
 
         <div class="card">
+          <h3>Overdue</h3>
 
-            <h3>Overdue</h3>
-
-            <p id="overdueTasks">
-
-                0
-
-            </p>
-
+          <p id="overdueTasks">0</p>
         </div>
+      </section>
 
-    </section>
+      <!-- ========================= -->
+      <!-- Task List -->
+      <!-- ========================= -->
 
-    <!-- ========================= -->
-    <!-- Task List -->
-    <!-- ========================= -->
-
-    <section
-        id="taskContainer">
-
+      <section id="taskContainer">
         <!--
 
         JavaScript will create task cards here
 
         -->
+      </section>
 
-    </section>
+      <!-- ========================= -->
+      <!-- Empty State -->
+      <!-- ========================= -->
 
-    <!-- ========================= -->
-    <!-- Empty State -->
-    <!-- ========================= -->
-
-    <section
-        id="emptyState">
-
+      <section id="emptyState">
         <i class="fa-solid fa-clipboard-list"></i>
 
-        <h2>
+        <h2>No Tasks Yet</h2>
 
-            No Tasks Yet
+        <p>Start by adding your first task.</p>
+      </section>
 
-        </h2>
+      <!-- ========================= -->
+      <!-- Footer Buttons -->
+      <!-- ========================= -->
 
-        <p>
+      <section class="footer-actions">
+        <button id="clearCompleted">
+          <i class="fa-solid fa-trash"></i>
 
-            Start by adding your first task.
-
-        </p>
-
-    </section>
-
-    <!-- ========================= -->
-    <!-- Footer Buttons -->
-    <!-- ========================= -->
-
-    <section class="footer-actions">
-
-        <button
-            id="clearCompleted">
-
-            <i class="fa-solid fa-trash"></i>
-
-            Clear Completed
-
+          Clear Completed
         </button>
+      </section>
+    </div>
 
-    </section>
-
-</div>
-
-<script src="js/app.js"></script>
-
-</body>
-
+    <script src="js/app.js"></script>
+  </body>
 </html>
